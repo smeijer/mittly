@@ -1,6 +1,6 @@
 {
   "name": "mittly",
-  "version": "3.0.1-pre.1",
+  "version": "3.0.1-pre.2",
   "description": "Tiny 200b functional Event Emitter / pubsub.",
   "tshy": {
     "project": "./tsconfig.json",
