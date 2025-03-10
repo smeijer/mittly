@@ -2,18 +2,9 @@
   "name": "mitt",
   "version": "3.0.1",
   "description": "Tiny 200b functional Event Emitter / pubsub.",
-  "module": "dist/mitt.mjs",
-  "main": "dist/mitt.js",
-  "jsnext:main": "dist/mitt.mjs",
-  "umd:main": "dist/mitt.umd.js",
-  "source": "src/index.ts",
-  "typings": "index.d.ts",
-  "exports": {
-    "types": "./index.d.ts",
-    "module": "./dist/mitt.mjs",
-    "import": "./dist/mitt.mjs",
-    "require": "./dist/mitt.js",
-    "default": "./dist/mitt.mjs"
+  "tshy": {
+    "project": "./tsconfig.json",
+    "exports": "./src/*.ts"
   },
   "scripts": {
     "test": "npm-run-all --silent typecheck lint mocha test-types",
@@ -21,7 +12,7 @@
     "test-types": "tsc test/test-types-compilation.ts --noEmit --strict",
     "lint": "eslint src test --ext ts --ext js",
     "typecheck": "tsc --noEmit",
-    "bundle": "microbundle -f es,cjs,umd",
+    "bundle": "tshy && attw -P",
     "build": "npm-run-all --silent clean -p bundle -s docs",
     "clean": "rimraf dist",
     "docs": "documentation readme src/index.ts --section API -q --parse-extension ts",
@@ -60,6 +51,7 @@
     "trailingComma": "none"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.16.4",
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",
     "@types/sinon": "^9.0.4",
@@ -72,7 +64,6 @@
     "eslint-config-developit": "^1.2.0",
     "eslint-plugin-compat": "^4.1.4",
     "esm": "^3.2.25",
-    "microbundle": "^0.12.3",
     "mocha": "^8.0.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.8",
@@ -80,6 +71,24 @@
     "sinon": "^9.0.2",
     "sinon-chai": "^3.5.0",
     "ts-node": "^10.9.1",
+    "tshy": "^3.0.2",
     "typescript": "^4.9.5"
-  }
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/commonjs/index.js",
+  "types": "./dist/commonjs/index.d.ts",
+  "module": "./dist/esm/index.js"
 }
