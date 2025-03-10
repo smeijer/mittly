@@ -1,3 +1,5 @@
+> This is a fork of mitt with proper cjs/esm support. See [smeijer/mittly](https://github.com/smeijer/mittly) for this package, or [developit/mitt](https://github.com/developit/mitt) for the original source.
+
 <p align="center">
   <img src="https://i.imgur.com/BqsX9NT.png" width="300" height="300" alt="mitt">
   <br>
@@ -6,7 +8,7 @@
   <a href="https://unpkg.com/mitt/dist/mitt.js"><img src="https://img.badgesize.io/https://unpkg.com/mitt/dist/mitt.js?compression=gzip" alt="gzip size"></a>
 </p>
 
-# Mitt
+# Mittly
 
 > Tiny 200b functional event emitter / pubsub.
 

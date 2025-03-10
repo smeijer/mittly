@@ -1,6 +1,6 @@
 {
-  "name": "mitt",
-  "version": "3.0.1",
+  "name": "mittly",
+  "version": "3.0.1-pre.1",
   "description": "Tiny 200b functional Event Emitter / pubsub.",
   "tshy": {
     "project": "./tsconfig.json",
@@ -18,16 +18,20 @@
     "docs": "documentation readme src/index.ts --section API -q --parse-extension ts",
     "release": "npm run -s build -s && npm t && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
-  "repository": "developit/mitt",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smeijer/mittly"
+  },
   "keywords": [
     "events",
     "eventemitter",
     "emitter",
     "pubsub"
   ],
-  "homepage": "https://github.com/developit/mitt",
+  "homepage": "https://github.com/smeijer/mittly",
   "authors": [
-    "Jason Miller <jason@developit.ca>"
+    "Jason Miller <jason@developit.ca>",
+    "Stephan Meijer <stephan.meijer@gmail.com>"
   ],
   "license": "MIT",
   "files": [
